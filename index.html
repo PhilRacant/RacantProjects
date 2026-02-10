@@ -51,44 +51,24 @@
       padding: 6rem 1.5rem 7rem;
     }
 
-    /* Softer clay shimmer effect */
-.hero-title {
-  position: relative;
-  display: inline-block;
-  background: linear-gradient(
-    90deg,
-    rgba(255,255,255,0.05) 0%,
-    rgba(255,255,255,0.15) 50%,
-    rgba(255,255,255,0.05) 100%
-  );
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: clayShimmer 8s ease-in-out infinite;
-}
+    /* Clean, bold hero title (no shimmer) */
+    .hero-title {
       font-family: "Arial Rounded MT Bold", "Segoe UI", system-ui, sans-serif;
       font-size: 2.8rem;
       margin-bottom: 1rem;
       letter-spacing: 0.5px;
+      color: #ffffff;
       text-shadow: 0 3px 6px rgba(0, 0, 0, 0.45);
     }
 
-    @keyframes clayShimmer {
-      0% { background-position: 200% 0; }
-      50% { background-position: 0 0; }
-      100% { background-position: -200% 0; }
-    }
-
-    /* Preserve coloured letters */
+    /* Light-blue first letters */
     .hero-title .first-letter {
       color: var(--racant-light-blue);
-      -webkit-text-fill-color: var(--racant-light-blue);
     }
 
+    /* Light-blue dash */
     .hero-title .dash {
-      color: var(--racant-dark-blue);
-      -webkit-text-fill-color: var(--racant-dark-blue);
+      color: var(--racant-light-blue);
     }
 
     header p {
@@ -371,6 +351,7 @@
   </footer>
 </body>
 </html>
+
 
 
 
