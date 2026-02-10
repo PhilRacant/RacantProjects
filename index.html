@@ -51,8 +51,10 @@
       padding: 6rem 1.5rem 7rem;
     }
 
-    /* Clean, bold hero title (no shimmer) */
+    /* Clean hero title with clay lift */
     .hero-title {
+      position: relative;
+      display: inline-block;
       font-family: "Arial Rounded MT Bold", "Segoe UI", system-ui, sans-serif;
       font-size: 2.8rem;
       margin-bottom: 1rem;
@@ -61,14 +63,28 @@
       text-shadow: 0 3px 6px rgba(0, 0, 0, 0.45);
     }
 
-    /* Light-blue first letters */
-    .hero-title .first-letter {
-      color: var(--racant-light-blue);
+    .hero-title::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 110%;
+      height: 130%;
+      transform: translate(-50%, -50%);
+      background: rgba(255, 255, 255, 0.12);
+      filter: blur(22px);
+      border-radius: 40px;
+      z-index: -1;
     }
 
-    /* Light-blue dash */
+    /* Sculpted tilde separator */
     .hero-title .dash {
       color: var(--racant-light-blue);
+      font-weight: 700;
+      padding: 0 0.25rem;
+      font-size: 0.9em;
+      display: inline-block;
+      transform: translateY(-0.05em);
     }
 
     header p {
@@ -83,13 +99,39 @@
       padding: 3.5rem 1.5rem 3rem;
     }
 
+    /* Section titles with clay lift + colourised letters */
     .section-title {
-      text-align: center;
+      position: relative;
+      display: inline-block;
       font-family: "Arial Rounded MT Bold", "Segoe UI", system-ui, sans-serif;
       font-size: 2.1rem;
-      color: var(--racant-dark-blue);
       margin-bottom: 2rem;
-      text-shadow: 0 2px 3px var(--clay-shadow-soft);
+      background-color: #ffffff;
+      padding: 0.4rem 1rem;
+      border-radius: 18px;
+    }
+
+    .section-title::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 115%;
+      height: 150%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 0, 0, 0.06);
+      filter: blur(18px);
+      border-radius: 28px;
+      z-index: -1;
+    }
+
+    /* Colour system: first letter dark blue, rest light blue */
+    .section-title span.first {
+      color: var(--racant-dark-blue);
+    }
+
+    .section-title span.rest {
+      color: var(--racant-light-blue);
     }
 
     .intro-text {
@@ -285,21 +327,17 @@
 <body>
   <header>
     <h1 class="hero-title">
-      <span class="first-letter">R</span>acant 
-      <span class="dash">—</span> 
-      <span class="first-letter">A</span> 
-      <span class="first-letter">N</span>ew 
-      <span class="first-letter">A</span>pproach 
-      <span class="first-letter">t</span>o 
-      <span class="first-letter">P</span>roperty 
-      <span class="first-letter">S</span>upport
+      Racant <span class="dash">~</span> A New Approach to Property Support
     </h1>
     <p>Crafted with care. Built with clarity. More details will unfold in time.</p>
   </header>
 
   <main>
     <section aria-labelledby="what-we-do">
-      <h2 id="what-we-do" class="section-title">What We Do</h2>
+      <h2 id="what-we-do" class="section-title">
+        <span class="first">W</span><span class="rest">hat We Do</span>
+      </h2>
+
       <p class="intro-text">
         A calm, structured starting point for what Racant will become. These are the principles that guide the work,
         even before every detail is defined.
@@ -327,7 +365,10 @@
 
     <section class="why" aria-labelledby="why-racant">
       <div class="why-inner">
-        <h2 id="why-racant" class="section-title">Why Racant</h2>
+        <h2 id="why-racant" class="section-title">
+          <span class="first">W</span><span class="rest">hy Racant</span>
+        </h2>
+
         <ul>
           <li>A modern, human approach to property support.</li>
           <li>Built on clarity, care, and calm decision-making.</li>
@@ -338,7 +379,10 @@
     </section>
 
     <section class="closing" aria-labelledby="shaping-next">
-      <h2 id="shaping-next">Shaping What Comes Next</h2>
+      <h2 id="shaping-next" class="section-title">
+        <span class="first">S</span><span class="rest">haping What Comes Next</span>
+      </h2>
+
       <p>
         Racant is evolving. We’re shaping something new with care, patience, and intention.
         This is just the first page of the story.
@@ -351,6 +395,7 @@
   </footer>
 </body>
 </html>
+
 
 
 
