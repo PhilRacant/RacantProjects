@@ -51,7 +51,6 @@
       padding: 6rem 1.5rem 7rem;
     }
 
-    /* Clean hero title with clay lift */
     .hero-title {
       position: relative;
       display: inline-block;
@@ -77,7 +76,6 @@
       z-index: -1;
     }
 
-    /* Sculpted tilde separator */
     .hero-title .dash {
       color: var(--racant-light-blue);
       font-weight: 700;
@@ -96,7 +94,7 @@
 
     /* MAIN */
     main {
-      padding: 2.5rem 1.5rem 3rem; /* reduced gap under hero */
+      padding: 1.5rem 1.5rem 3rem;
     }
 
     /* Centre both sections */
@@ -105,7 +103,7 @@
       text-align: center;
     }
 
-    /* Section titles with clay lift + colourised letters */
+    /* Section titles */
     .section-title {
       position: relative;
       display: inline-block;
@@ -131,7 +129,6 @@
       z-index: -1;
     }
 
-    /* Colour system: first letter dark blue, rest light blue */
     .section-title span.first {
       color: var(--racant-dark-blue);
     }
@@ -278,6 +275,7 @@
     @media (max-width: 768px) {
       header {
         padding: 4.5rem 1.25rem 5rem;
+        background-position: center; /* leave mobile image untouched */
       }
 
       .hero-title {
@@ -300,7 +298,7 @@
 
     @media (min-width: 1024px) {
       header {
-        padding: 12rem 2rem 10rem; /* bring house lower + reduce bottom gap */
+        padding: 18rem 2rem 4rem; /* bring house lower + reduce bottom gap */
       }
 
       .hero-title {
@@ -312,7 +310,7 @@
       }
 
       main {
-        padding: 3rem 3rem 3.5rem; /* reduced gap under hero */
+        padding: 1.5rem 3rem 3.5rem; /* reduced gap under hero */
       }
 
       .divider {
@@ -326,14 +324,6 @@
       .closing {
         padding: 4.5rem 3rem 4rem;
       }
-    }
-
-    /* REMOVE MOBILE BUBBLE */
-    #begin-with-racant,
-    .begin-with-racant,
-    .bubble,
-    .cta-bubble {
-      display: none !important;
     }
   </style>
 </head>
@@ -415,6 +405,7 @@
   </footer>
 </body>
 </html>
+
 
 
 
