@@ -96,7 +96,7 @@
 
     /* MAIN */
     main {
-      padding: 3.5rem 1.5rem 3rem;
+      padding: 2.5rem 1.5rem 3rem; /* reduced gap under hero */
     }
 
     /* Centre both sections */
@@ -300,7 +300,7 @@
 
     @media (min-width: 1024px) {
       header {
-        padding: 10rem 2rem 12rem;
+        padding: 12rem 2rem 10rem; /* bring house lower + reduce bottom gap */
       }
 
       .hero-title {
@@ -312,7 +312,7 @@
       }
 
       main {
-        padding: 4rem 3rem 3.5rem;
+        padding: 3rem 3rem 3.5rem; /* reduced gap under hero */
       }
 
       .divider {
@@ -326,6 +326,14 @@
       .closing {
         padding: 4.5rem 3rem 4rem;
       }
+    }
+
+    /* REMOVE MOBILE BUBBLE */
+    #begin-with-racant,
+    .begin-with-racant,
+    .bubble,
+    .cta-bubble {
+      display: none !important;
     }
   </style>
 </head>
@@ -389,7 +397,10 @@
 
     <section class="closing" aria-labelledby="shaping-next">
       <h2 id="shaping-next" class="section-title">
-        <span class="first">S</span><span class="rest">haping What Comes Next</span>
+        <span class="first">S</span><span class="rest">haping </span>
+        <span class="first">W</span><span class="rest">hat </span>
+        <span class="first">C</span><span class="rest">omes </span>
+        <span class="first">N</span><span class="rest">ext</span>
       </h2>
 
       <p>
