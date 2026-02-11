@@ -42,13 +42,39 @@
     }
 
     /* HERO */
-    header {
-      background:
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.25)),
-        url("images/racant-hero.png") center/cover no-repeat;
+    header.hero {
+      position: relative;
       color: #ffffff;
       text-align: center;
       padding: 6rem 1.5rem 7rem;
+      overflow: hidden;
+    }
+
+    .hero-image {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+    }
+
+    .hero-image picture,
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.45), rgba(0,0,0,0.25));
+      z-index: -1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
     }
 
     .hero-title {
@@ -97,13 +123,11 @@
       padding: 1.5rem 1.5rem 3rem;
     }
 
-    /* Centre both sections */
     section[aria-labelledby="what-we-do"],
     section[aria-labelledby="why-racant"] {
       text-align: center;
     }
 
-    /* Section titles */
     .section-title {
       position: relative;
       display: inline-block;
@@ -273,9 +297,8 @@
 
     /* RESPONSIVE */
     @media (max-width: 768px) {
-      header {
+      header.hero {
         padding: 4.5rem 1.25rem 5rem;
-        background-position: center; /* leave mobile image untouched */
       }
 
       .hero-title {
@@ -297,8 +320,8 @@
     }
 
     @media (min-width: 1024px) {
-      header {
-        padding: 18rem 2rem 4rem; /* bring house lower + reduce bottom gap */
+      header.hero {
+        padding: 18rem 2rem 4rem;
       }
 
       .hero-title {
@@ -310,7 +333,7 @@
       }
 
       main {
-        padding: 1.5rem 3rem 3.5rem; /* reduced gap under hero */
+        padding: 1.5rem 3rem 3.5rem;
       }
 
       .divider {
@@ -329,11 +352,21 @@
 </head>
 
 <body>
-  <header>
-    <h1 class="hero-title">
-      Racant <span class="dash">~</span> A New Approach to Property Support
-    </h1>
-    <p>Crafted with care. Built with clarity. More details will unfold in time.</p>
+  <header class="hero">
+    <div class="hero-image">
+      <picture>
+        <source media="(max-width: 600px)" srcset="images/racant-small-hero.jpg">
+        <source media="(max-width: 1200px)" srcset="images/racant-medium-hero.jpg">
+        <img src="images/racant-large-hero.jpg" alt="Racant Property Hero Image">
+      </picture>
+    </div>
+
+    <div class="hero-content">
+      <h1 class="hero-title">
+        Racant <span class="dash">~</span> A New Approach to Property Support
+      </h1>
+      <p>Crafted with care. Built with clarity. More details will unfold in time.</p>
+    </div>
   </header>
 
   <main>
@@ -401,10 +434,11 @@
   </main>
 
   <footer>
-    <span>&copy; 2026 Racant. All rights reserved.</span>
+    <span>&copy; 2026 Racant Business Services Ltd. All rights reserved.</span>
   </footer>
 </body>
 </html>
+
 
 
 
